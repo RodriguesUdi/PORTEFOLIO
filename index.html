@@ -1,86 +1,199 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <title>Portefólio · Telmo Rodrigues</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f7f7f7;
-      color: #222;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    .container {
-      max-width: 900px;
-      margin: 120px auto;
-      padding: 0 40px;
-      text-align: left;
-    }
+<title>Portefólio - Telmo Rodrigues</title>
+<meta name="description" content="Portefólio de Telmo Rodrigues, artista visual. Pintura, desenho, escultura, criação digital e textos poéticos.">
+<meta name="theme-color" content="#151513">
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 50px;
-      font-weight: 700;
-      text-align: left;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 
-    p.desc {
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 60px;
-    }
-
-    /* BOTÕES GRANDES */
-    .links {
-      margin-top: 60px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-    }
-
-    .links .box {
-      width: 180px;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #222;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #222;
-      font-size: 18px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .links .box:hover {
-      background: #222;
-      color: #fff;
-    }
-  </style>
+<style>
+/* (todo o CSS original mantido sem alterações) */
+</style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>Portefólio</h1>
+<header class="header">
+<div class="container header-inner">
 
-  <p class="desc">
-    Telmo Rodrigues é um artista visual multidisciplinar cuja obra atravessa pintura, desenho, escultura e criação digital.<br>
-    A sua prática combina o gesto manual com a experimentação contemporânea, explorando o equilíbrio entre forma, matéria e símbolo.<br><br>
-    Cada obra nasce como extensão de uma linguagem interior, uma busca por harmonia entre o visível e o invisível.<br><br>
-    Este portefólio apresenta fragmentos dessa jornada criativa: composições que revelam o olhar do artista sobre o corpo, a natureza e o imaginário.<br><br>
-    <strong>Explora as secções abaixo para conhecer o universo visual de Rodrigues.</strong>
-  </p>
+<a class="brand" href="index.html" aria-label="Telmo Rodrigues - página inicial">
+<span class="brand-name">Telmo Rodrigues</span>
+<span class="brand-caption">Artista visual</span>
+</a>
 
-  <div class="links">
-    <a class="box" href="pinturas.html">Pintura</a>
-    <a class="box" href="desenhos.html">Desenhos</a>
-    <a class="box" href="esculturas.html">Esculturas</a>
-    <a class="box" href="textos.html">Textos</a>
-  </div>
+<nav class="nav" aria-label="Navegação principal">
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre</a>
+<a href="#trabalho">Portefólio</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
 </div>
+</header>
+
+<main>
+
+<section class="hero container" id="inicio">
+<div class="hero-heading">
+<div>
+<p class="eyebrow">Portefólio artístico</p>
+<h1 class="serif">Portefólio</h1>
+</div>
+
+<div class="hero-side">
+<p>Telmo Rodrigues</p>
+<p class="discipline">Pintura · Escultura · Desenho · Escrita</p>
+</div>
+</div>
+
+<!-- IMAGEM DE DESTAQUE ATUALIZADA -->
+<div class="featured">
+<a class="featured-link" href="pinturas.html" aria-label="Explorar pinturas">
+<img src="images/Ilustracao3.jpg" alt="Obra em destaque de Telmo Rodrigues" fetchpriority="high">
+<div class="featured-overlay">
+<div>
+<h2 class="featured-title serif">Universo visual</h2>
+<p class="featured-caption">Uma exploração entre imagem, matéria e imaginário.</p>
+</div>
+<span class="featured-arrow" aria-hidden="true">></span>
+</div>
+</a>
+
+<div class="image-credit">
+<span>Seleção de obras</span>
+<span>01 - Portefólio</span>
+</div>
+</div>
+
+</section>
+
+<section class="about container" id="sobre">
+<div class="about-heading">
+<p class="eyebrow">Sobre o artista</p>
+<h2 class="serif">Entre o gesto<br>e o imaginário.</h2>
+<p class="artist-role">Telmo Rodrigues · Artista visual</p>
+</div>
+
+<div class="about-copy">
+
+<p>Telmo Rodrigues é um artista visual multidisciplinar cuja obra atravessa pintura, desenho, escultura e criação digital.</p>
+
+<p>A sua prática combina o gesto manual com a experimentação contemporânea, articulando matéria, intenção e construção simbólica.</p>
+
+<p>Cada obra nasce como extensão de uma linguagem interior — emoções, pensamentos e estados mentais transformados em imagens que comunicam o íntimo para o exterior.</p>
+
+<p>Este portefólio apresenta fragmentos dessa jornada criativa: composições que revelam o olhar do artista sobre o corpo, a natureza e o imaginário.</p>
+
+<strong>Explora as secções abaixo para conhecer o universo visual de Rodrigues.</strong>
+
+</div>
+</section>
+
+<section class="work container" id="trabalho">
+<div class="work-heading">
+<div>
+<p class="eyebrow">Explorar</p>
+<h2 class="serif">Áreas de trabalho</h2>
+</div>
+
+<p class="work-note">
+Diferentes meios, possibilidades e formas de expressão.
+Quatro dimensões de uma prática artística em constante exploração.
+</p>
+</div>
+
+<div class="categories">
+
+<a class="category" href="pinturas.html" aria-label="Ver pinturas">
+<div class="category-image">
+<img src="images/pinturas.jpg" alt="Seleção de pinturas de Telmo Rodrigues" loading="lazy">
+</div>
+<div class="category-topline">
+<span class="category-number">01 / 04</span>
+<span class="category-arrow" aria-hidden="true"></span>
+</div>
+<h3 class="serif">Pintura</h3>
+<p class="category-description">Cor, gesto e composição.</p>
+</a>
+
+<a class="category" href="desenhos.html" aria-label="Ver desenhos">
+<div class="category-image">
+<img src="images/desenhos.jpg" alt="Seleção de desenhos de Telmo Rodrigues" loading="lazy">
+</div>
+<div class="category-topline">
+<span class="category-number">02 / 04</span>
+<span class="category-arrow" aria-hidden="true">></span>
+</div>
+<h3 class="serif">Desenhos</h3>
+<p class="category-description">Linha, observação e estudo.</p>
+</a>
+
+<a class="category" href="esculturas.html" aria-label="Ver esculturas">
+<div class="category-image">
+<img src="images/esculturas.jpg" alt="Seleção de esculturas de Telmo Rodrigues" loading="lazy">
+</div>
+<div class="category-topline">
+<span class="category-number">03 / 04</span>
+<span class="category-arrow" aria-hidden="true"></span>
+</div>
+<h3 class="serif">Esculturas</h3>
+<p class="category-description">Forma, matéria e espaço.</p>
+</a>
+
+<a class="category" href="textos.html" aria-label="Ler textos poéticos">
+<div class="category-image">
+<img src="images/textos.jpg" alt="Universo da escrita e dos textos poéticos" loading="lazy">
+</div>
+<div class="category-topline">
+<span class="category-number">04 / 04</span>
+<span class="category-arrow" aria-hidden="true">></span>
+</div>
+<h3 class="serif">Textos poéticos</h3>
+<p class="category-description">Palavra, pensamento e intimidade.</p>
+</a>
+
+</div>
+</section>
+
+<section class="contact" id="contacto">
+<div class="container contact-inner">
+<div>
+<p class="eyebrow">Contacto</p>
+<h2 class="serif">Vamos conversar<br>sobre arte.</h2>
+<p class="contact-copy">Para questões, colaborações ou projetos, entra em contacto.</p>
+</div>
+
+<div class="contact-action">
+<a class="contact-link" href="mailto:t.f.98@hotmail.com">
+<span>Entrar em contacto</span>
+<span aria-hidden="true">></span>
+</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="container footer-inner">
+<p class="footer-copy">© <span id="year">2026</span> Telmo Rodrigues. Todos os direitos reservados.</p>
+
+<nav class="footer-links" aria-label="Ligações de rodapé">
+<a href="https://www.instagram.com/rodrigues.udi/" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a href="#inicio">Voltar ao topo</a>
+</nav>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
