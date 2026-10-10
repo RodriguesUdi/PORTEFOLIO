@@ -427,4 +427,200 @@ a:focus-visible {
 .contact-inner {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items:
+  align-items: end;
+  gap: 35px;
+}
+
+.contact h2 {
+  margin-top: 20px;
+  font-size: clamp(43px, 7.8vw, 100px);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+
+.contact-copy {
+  max-width: 360px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--accent);
+  font-size: 12px;
+  white-space: nowrap;
+  transition: color .3s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer-copy {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.footer-links a {
+  color: #c2c0b7;
+  font-size: 10px;
+  transition: color .25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+<div class="container header-inner">
+
+<a class="brand" href="index.html" aria-label="Telmo Rodrigues - página inicial">
+<span class="brand-name">Telmo Rodrigues</span>
+<span class="brand-caption">Artista visual</span>
+</a>
+
+<nav class="nav" aria-label="Navegação principal">
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre</a>
+<a href="#trabalho">Portefólio</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero container" id="inicio">
+<div class="hero-heading">
+<div>
+<p class="eyebrow">Portefólio artístico</p>
+<h1 class="serif">Portefólio</h1>
+</div>
+
+<div class="hero-side">
+<p>Telmo Rodrigues</p>
+<p class="discipline">Pintura · Escultura · Desenho · Escrita</p>
+</div>
+</div>
+
+<div class="featured">
+<a class="featured-link" href="pinturas.html" aria-label="Explorar pinturas">
+<img src="images/Ilustracao3.jpg" alt="Obra em destaque de Telmo Rodrigues" fetchpriority="high">
+<div class="featured-overlay">
+<div>
+<h2 class="featured-title serif">Universo visual</h2>
+<p class="featured-caption">Uma exploração entre imagem, matéria e imaginário.</p>
+</div>
+<span class="featured-arrow" aria-hidden="true">></span>
+</div>
+</a>
+
+<div class="image-credit">
+<span>Seleção de obras</span>
+<span>01 - Portefólio</span>
+</div>
+</div>
+
+</section>
+
+<section class="about container" id="sobre">
+<div class="about-heading">
+<p class="eyebrow">Sobre o artista</p>
+<h2 class="serif">Entre o gesto<br>e o imaginário.</h2>
+<p class="artist-role">Telmo Rodrigues · Artista visual</p>
+</div>
+
+<div class="about-copy">
+
+<p>Telmo Rodrigues é um artista visual multidisciplinar cuja obra atravessa pintura, desenho, escultura e criação digital.</p>
+
+<p>A sua prática combina o gesto manual com a experimentação contemporânea, articulando matéria, intenção e construção simbólica.</p>
+
+<p>Cada obra nasce como extensão de uma linguagem interior — emoções, pensamentos e estados mentais transformados em imagens que comunicam o íntimo para o exterior.</p>
+
+<p>Este portefólio apresenta fragmentos dessa jornada criativa: composições que revelam o olhar do artista sobre o corpo, a natureza e o imaginário.</p>
+
+<strong>Explora as secções abaixo para conhecer o universo visual de Rodrigues.</strong>
+
+</div>
+</section>
+
+<section class="work container" id="trabalho">
+<div class="work-heading">
+<div>
+<p class="eyebrow">Explorar</p>
+<h2 class="serif">Áreas de trabalho</h2>
+</div>
+
+<p class="work-note">
+Diferentes meios, possibilidades e formas de expressão.
+Quatro dimensões de uma prática artística em constante exploração.
+</p>
+</div>
+
+<div class="categories">
+
+<a class="category" href="pinturas.html" aria-label="Ver pinturas">
+<div class="category-image">
+<img src="images/pinturas.jpg" alt="Seleção de pinturas de Telmo Rodrigues" loading="lazy">
+</div>
+<div class="category-topline">
+<span class="category-number">01 / 04</span>
+<span class="category-arrow" aria-hidden="true"></span>
+</div>
+<h3 class="serif">Pintura</h3>
+<p class="category-description">Cor, gesto e composição.</p>
+</a>
+
+<a class="category" href="desenhos.html" aria-label="Ver desenhos">
+<div class="category-image">
+<img src="images/desenhos.jpg" alt="Seleção de desenhos de Telmo Rodrigues" loading="lazy">
+</div>
+<div class="category-topline">
+<span class="category-number">02 / 04</span>
+<span class="category-arrow" aria-hidden="true">></span>
+</div>
+<h3 class="serif">Desenhos</h3>
+<p class="category-description">Linha, observação e estudo.</p>
+</a>
+
+<a class="category" href="esculturas.html" aria-label="Ver esculturas">
+<div class="category-image">
+<img src="images/esculturas.jpg" alt="Seleção de esculturas de Telmo Rodrigues" loading="lazy">
+</div>
+<div class="category-topline">
+<span class="category-number">03 / 04</span>
+<span class="category-arrow" aria-hidden="true"></span>
+</div>
+<h3 class="serif">Esculturas</h3>
+<p class="category-description">Forma, matéria e espaço.</p>
