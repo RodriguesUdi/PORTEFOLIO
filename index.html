@@ -13,187 +13,418 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* (todo o CSS original mantido sem alterações) */
-</style>
-</head>
+/* TODO O CSS ORIGINAL MANTIDO — APENAS CORRIGIDO */
 
-<body>
+/* Variáveis */
+:root {
+  --bg: #151513;
+  --surface: #1c1c19;
+  --text: #f1efe8;
+  --muted: #a09e95;
+  --line: #383832;
+  --accent: #d2c9b5;
+  --page-width: 1480px;
+  --gutter: clamp(22px, 6.5vw, 100px);
+}
 
-<header class="header">
-<div class="container header-inner">
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-<a class="brand" href="index.html" aria-label="Telmo Rodrigues - página inicial">
-<span class="brand-name">Telmo Rodrigues</span>
-<span class="brand-caption">Artista visual</span>
-</a>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-<nav class="nav" aria-label="Navegação principal">
-<a href="#inicio">Início</a>
-<a href="#sobre">Sobre</a>
-<a href="#trabalho">Portefólio</a>
-<a href="#contacto">Contacto</a>
-</nav>
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
 
-</div>
-</header>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-<main>
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-<section class="hero container" id="inicio">
-<div class="hero-heading">
-<div>
-<p class="eyebrow">Portefólio artístico</p>
-<h1 class="serif">Portefólio</h1>
-</div>
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-<div class="hero-side">
-<p>Telmo Rodrigues</p>
-<p class="discipline">Pintura · Escultura · Desenho · Escrita</p>
-</div>
-</div>
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
 
-<!-- IMAGEM DE DESTAQUE ATUALIZADA -->
-<div class="featured">
-<a class="featured-link" href="pinturas.html" aria-label="Explorar pinturas">
-<img src="images/Ilustracao3.jpg" alt="Obra em destaque de Telmo Rodrigues" fetchpriority="high">
-<div class="featured-overlay">
-<div>
-<h2 class="featured-title serif">Universo visual</h2>
-<p class="featured-caption">Uma exploração entre imagem, matéria e imaginário.</p>
-</div>
-<span class="featured-arrow" aria-hidden="true">></span>
-</div>
-</a>
+.container {
+  width: calc(100% - var(--gutter) * 2);
+  max-width: var(--page-width);
+  margin-inline: auto;
+}
 
-<div class="image-credit">
-<span>Seleção de obras</span>
-<span>01 - Portefólio</span>
-</div>
-</div>
+.eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 
-</section>
+.serif {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+}
 
-<section class="about container" id="sobre">
-<div class="about-heading">
-<p class="eyebrow">Sobre o artista</p>
-<h2 class="serif">Entre o gesto<br>e o imaginário.</h2>
-<p class="artist-role">Telmo Rodrigues · Artista visual</p>
-</div>
+/* CABEÇALHO */
+.header {
+  border-bottom: 1px solid var(--line);
+}
 
-<div class="about-copy">
+.header-inner {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
 
-<p>Telmo Rodrigues é um artista visual multidisciplinar cuja obra atravessa pintura, desenho, escultura e criação digital.</p>
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
 
-<p>A sua prática combina o gesto manual com a experimentação contemporânea, articulando matéria, intenção e construção simbólica.</p>
+.brand-name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
 
-<p>Cada obra nasce como extensão de uma linguagem interior — emoções, pensamentos e estados mentais transformados em imagens que comunicam o íntimo para o exterior.</p>
+.brand-caption {
+  margin-top: 4px;
+  font-size: 10px;
+  color: var(--muted);
+}
 
-<p>Este portefólio apresenta fragmentos dessa jornada criativa: composições que revelam o olhar do artista sobre o corpo, a natureza e o imaginário.</p>
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 42px);
+}
 
-<strong>Explora as secções abaixo para conhecer o universo visual de Rodrigues.</strong>
+.nav a {
+  position: relative;
+  padding: 8px 0;
+  color: #c3c1b8;
+  font-size: 11px;
+  transition: color .25s ease;
+}
 
-</div>
-</section>
+.nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .3s ease;
+}
 
-<section class="work container" id="trabalho">
-<div class="work-heading">
-<div>
-<p class="eyebrow">Explorar</p>
-<h2 class="serif">Áreas de trabalho</h2>
-</div>
+.nav a:hover {
+  color: var(--text);
+}
 
-<p class="work-note">
-Diferentes meios, possibilidades e formas de expressão.
-Quatro dimensões de uma prática artística em constante exploração.
-</p>
-</div>
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
 
-<div class="categories">
+/* HERO */
+.hero {
+  padding-top: clamp(72px, 11vw, 150px);
+}
 
-<a class="category" href="pinturas.html" aria-label="Ver pinturas">
-<div class="category-image">
-<img src="images/pinturas.jpg" alt="Seleção de pinturas de Telmo Rodrigues" loading="lazy">
-</div>
-<div class="category-topline">
-<span class="category-number">01 / 04</span>
-<span class="category-arrow" aria-hidden="true"></span>
-</div>
-<h3 class="serif">Pintura</h3>
-<p class="category-description">Cor, gesto e composição.</p>
-</a>
+.hero-heading {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: clamp(35px, 5vw, 65px);
+}
 
-<a class="category" href="desenhos.html" aria-label="Ver desenhos">
-<div class="category-image">
-<img src="images/desenhos.jpg" alt="Seleção de desenhos de Telmo Rodrigues" loading="lazy">
-</div>
-<div class="category-topline">
-<span class="category-number">02 / 04</span>
-<span class="category-arrow" aria-hidden="true">></span>
-</div>
-<h3 class="serif">Desenhos</h3>
-<p class="category-description">Linha, observação e estudo.</p>
-</a>
+.hero h1 {
+  margin-top: 20px;
+  font-size: clamp(58px, 10.8vw, 150px);
+  line-height: .96;
+  letter-spacing: -.065em;
+}
 
-<a class="category" href="esculturas.html" aria-label="Ver esculturas">
-<div class="category-image">
-<img src="images/esculturas.jpg" alt="Seleção de esculturas de Telmo Rodrigues" loading="lazy">
-</div>
-<div class="category-topline">
-<span class="category-number">03 / 04</span>
-<span class="category-arrow" aria-hidden="true"></span>
-</div>
-<h3 class="serif">Esculturas</h3>
-<p class="category-description">Forma, matéria e espaço.</p>
-</a>
+.hero-side {
+  padding-bottom: 9px;
+  text-align: right;
+}
 
-<a class="category" href="textos.html" aria-label="Ler textos poéticos">
-<div class="category-image">
-<img src="images/textos.jpg" alt="Universo da escrita e dos textos poéticos" loading="lazy">
-</div>
-<div class="category-topline">
-<span class="category-number">04 / 04</span>
-<span class="category-arrow" aria-hidden="true">></span>
-</div>
-<h3 class="serif">Textos poéticos</h3>
-<p class="category-description">Palavra, pensamento e intimidade.</p>
-</a>
+.hero-side p {
+  font-size: 11px;
+  color: var(--muted);
+}
 
-</div>
-</section>
+.hero-side .discipline {
+  margin-top: 8px;
+  color: var(--text);
+  letter-spacing: .04em;
+}
 
-<section class="contact" id="contacto">
-<div class="container contact-inner">
-<div>
-<p class="eyebrow">Contacto</p>
-<h2 class="serif">Vamos conversar<br>sobre arte.</h2>
-<p class="contact-copy">Para questões, colaborações ou projetos, entra em contacto.</p>
-</div>
+/* FEATURED */
+.featured {
+  position: relative;
+}
 
-<div class="contact-action">
-<a class="contact-link" href="mailto:t.f.98@hotmail.com">
-<span>Entrar em contacto</span>
-<span aria-hidden="true">></span>
-</a>
-</div>
-</div>
-</section>
+.featured-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.9 / 1;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 60% 40%, #484238 0%, transparent 50%),
+    linear-gradient(130deg, #292925, #10100f 75%);
+}
 
-</main>
+.featured-link img {
+  transition: transform 1s cubic-bezier(.2,.7,.2,1),
+              opacity .4s ease;
+}
 
-<footer class="footer">
-<div class="container footer-inner">
-<p class="footer-copy">© <span id="year">2026</span> Telmo Rodrigues. Todos os direitos reservados.</p>
+.featured-link:hover img {
+  transform: scale(1.025);
+}
 
-<nav class="footer-links" aria-label="Ligações de rodapé">
-<a href="https://www.instagram.com/rodrigues.udi/" target="_blank" rel="noopener noreferrer">Instagram</a>
-<a href="#inicio">Voltar ao topo</a>
-</nav>
-</div>
-</footer>
+.featured-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  padding: clamp(20px, 4vw, 48px);
+  background: linear-gradient(transparent, rgba(0,0,0,.65));
+  pointer-events: none;
+}
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+.featured-title {
+  font-size: clamp(25px, 4vw, 48px);
+  line-height: 1.2;
+}
 
-</body>
-</html>
+.featured-caption {
+  margin-top: 7px;
+  color: #dedbd2;
+  font-size: 11px;
+}
+
+.featured-arrow {
+  flex: 0 0 auto;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.image-credit {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 13px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+/* ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: clamp(35px, 9vw, 140px);
+  padding-block: clamp(110px, 15vw, 205px);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-heading h2 {
+  margin-top: 24px;
+  font-size: clamp(36px, 5.2vw, 70px);
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+
+.about-heading .artist-role {
+  margin-top: 24px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.about-copy {
+  max-width: 650px;
+  padding-top: 28px;
+}
+
+.about-copy p {
+  margin-bottom: 24px;
+  color: #c5c3bb;
+  font-size: clamp(13px, 1.15vw, 15px);
+  line-height: 2;
+}
+
+.about-copy strong {
+  display: block;
+  margin-top: 35px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+/* WORK */
+.work {
+  padding-block: clamp(100px, 13vw, 175px);
+}
+
+.work-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.work-heading h2 {
+  margin-top: 16px;
+  font-size: clamp(39px, 6vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+
+.work-note {
+  max-width: 250px;
+  padding-bottom: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(35px, 5vw, 72px) 24px;
+}
+
+.category {
+  display: block;
+  min-width: 0;
+}
+
+.category-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.3 / 1;
+  background:
+    radial-gradient(ellipse at 40% 35%, #48453d, transparent 65%),
+    #242420;
+}
+
+.category-image img {
+  transition: transform .8s cubic-bezier(.2,.7,.2,1),
+              opacity .4s ease;
+}
+
+.category:hover .category-image img {
+  transform: scale(1.045);
+}
+
+.category-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.category-number {
+  font-size: 10px;
+  letter-spacing: .13em;
+  color: var(--muted);
+}
+
+.category-arrow {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 17px;
+  transition: background .3s ease, color .3s ease,
+              border-color .3s ease, transform .3s ease;
+}
+
+.category:hover .category-arrow {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  transform: rotate(45deg);
+}
+
+.category h3 {
+  margin-top: 8px;
+  font-size: clamp(29px, 4vw, 48px);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  transition: color .3s ease;
+}
+
+.category:hover h3 {
+  color: var(--accent);
+}
+
+.category-description {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* CONTACT */
+.contact {
+  padding-block: clamp(85px, 12vw, 155px);
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 90% 100%, rgba(100,94,76,.08), transparent 50%);
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items:
