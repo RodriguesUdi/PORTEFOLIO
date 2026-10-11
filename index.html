@@ -3,89 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>Portefólio Artístico · Telmo Rodrigues</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 20px 0;
+      font-weight: 300;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .box {
+      background: #111;
+      border: 1px solid #333;
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .box:hover {
+      background: #222;
+    }
+
+    .box a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .sobre {
+      margin-top: 60px;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 
 <body>
 
-<main>
+  <!-- TÍTULOS PRINCIPAIS -->
+  <h1>Portefólio artístico</h1>
+  <h2>Portefólio</h2>
 
-  <!-- TÍTULO PRINCIPAL -->
-  <section class="intro">
-    <h1>Portefólio artístico</h1>
-    <h2>Portefólio</h2>
-  </section>
+  <!-- QUADRADOS DAS ÁREAS -->
+  <div class="grid">
+    <div class="box"><a href="pinturas.html">Pinturas</a></div>
+    <div class="box"><a href="esculturas.html">Esculturas</a></div>
+    <div class="box"><a href="desenhos.html">Desenhos</a></div>
+    <div class="box"><a href="textos.html">Textos</a></div>
+  </div>
 
   <!-- SOBRE O ARTISTA -->
-  <section class="sobre">
+  <div class="sobre">
     <h3>Sobre o artista</h3>
 
-    <h1 class="frase">
-      Entre o gesto<br>
-      e o imaginário.
-    </h1>
+    <p>Telmo Rodrigues é um artista visual multidisciplinar cuja obra atravessa pintura, desenho, escultura e criação digital.</p>
 
-    <h4>Telmo Rodrigues · Artista visual</h4>
+    <p>A sua prática combina o gesto manual com a experimentação contemporânea, articulando matéria, intenção e construção simbólica.</p>
 
-    <p>
-      Telmo Rodrigues é um artista visual multidisciplinar cuja obra atravessa pintura, desenho, escultura e criação digital.
-      A sua prática combina o gesto manual com a experimentação contemporânea, articulando matéria, intenção e construção simbólica.
-    </p>
+    <p>Cada obra nasce como extensão de uma linguagem interior — emoções, pensamentos e estados mentais transformados em imagens que comunicam o íntimo para o exterior.</p>
 
-    <p>
-      Cada obra nasce como extensão de uma linguagem interior — emoções, pensamentos e estados mentais transformados em imagens que comunicam o íntimo para o exterior.
-    </p>
+    <p>Este portefólio apresenta fragmentos dessa jornada criativa: composições que revelam o olhar do artista sobre o corpo, a natureza e o imaginário.</p>
 
-    <p>
-      Este portefólio apresenta fragmentos dessa jornada criativa: composições que revelam o olhar do artista sobre o corpo, a natureza e o imaginário.
-      Explora as secções abaixo para conhecer o universo visual de Rodrigues.
-    </p>
-  </section>
-
-  <!-- EXPLORAR -->
-  <section class="explorar">
-    <h3>Explorar</h3>
-
-    <h4>Áreas de trabalho</h4>
-    <p>Diferentes meios, possibilidades e formas de expressão. Quatro dimensões de uma prática artística em constante exploração.</p>
-
-    <!-- PINTURA -->
-    <div class="categoria">
-      <h5>Seleção de pinturas de Telmo Rodrigues</h5>
-      <span class="num">01 / 04</span>
-      <h2>Pintura</h2>
-
-      <!-- IMAGEM DO BOTÃO DE PINTURA -->
-      <img src="Ilustracao3.jpg" alt="Pintura Digital" class="preview">
-
-      <a href="pinturas.html" class="btn">Ver pinturas</a>
-    </div>
-
-    <!-- DESENHOS -->
-    <div class="categoria">
-      <h5>Seleção de desenhos de Telmo Rodrigues</h5>
-      <span class="num">02 / 04</span>
-      <h2>Desenhos</h2>
-      <p>Linha, observação e estudo.</p>
-      <a href="desenhos.html" class="btn">Ver desenhos</a>
-    </div>
-
-    <!-- ESCULTURAS -->
-    <div class="categoria">
-      <h5>Seleção de esculturas de Telmo Rodrigues</h5>
-      <span class="num">03 / 04</span>
-      <h2>Esculturas</h2>
-
-      <!-- IMAGEM DO BOTÃO DE ESCULTURA -->
-      <img src="esculturaangel3.png" alt="Escultura Angel" class="preview">
-
-      <p>Forma, matéria e espaço.</p>
-      <a href="esculturas.html" class="btn">Ver esculturas</a>
-    </div>
-
-  </section>
-
-</main>
+    <p>Explora as secções abaixo para conhecer o universo visual de Rodrigues.</p>
+  </div>
 
 </body>
 </html>
