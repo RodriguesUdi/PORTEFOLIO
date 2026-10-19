@@ -2,79 +2,300 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Pinturas Reais · Udi Spernjaki</title>
+  <title>Pinturas Fisicas · Portefólio</title>
   <style>
-    body { margin:0; font-family:'Segoe UI', sans-serif; background:#f7f7f7; color:#222; }
-    nav { position:fixed; top:0; width:100%; background:#ffffffcc; backdrop-filter:blur(10px);
-          padding:15px 30px; display:flex; gap:30px; border-bottom:1px solid #ddd; }
-    nav a { text-decoration:none; color:#222; font-weight:500; }
-
-    .container { max-width:900px; margin:120px auto; padding:0 20px; }
-
-    h1 { font-size:26px; margin-bottom:10px; }
-    p.desc { margin-bottom:40px; line-height:1.6; }
-
-    .obra {
-      background:#fff;
-      padding:25px;
-      border:1px solid #ddd;
-      border-radius:8px;
-      margin-bottom:40px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      margin: 0;
+      padding: 0;
     }
 
-    .obra h2 { margin-top:0; font-size:22px; }
-    .obra p { line-height:1.6; }
+    .voltar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 6px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #000;
+      z-index: 1000;
+    }
+
+    .voltar:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    main {
+      padding: 80px 40px 40px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p.intro {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
 
     .gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:20px;
-      margin-top:20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
     }
 
-    .gallery img {
-      width:100%;
-      border-radius:6px;
-      border:1px solid #ccc;
+    .obra {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+    .obra img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      transition: transform 0.2s;
+    }
+
+    .obra img:hover {
+      filter: brightness(0.9);
+      cursor: zoom-in;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .modal img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      transition: transform 0.2s;
+    }
+
+    .fechar, .anterior, .seguinte {
+      position: absolute;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .fechar { top: 20px; right: 30px; }
+    .anterior { left: 40px; top: 50%; transform: translateY(-50%); }
+    .seguinte { right: 40px; top: 50%; transform: translateY(-50%); }
+
+    .fechar:hover, .anterior:hover, .seguinte:hover {
+      color: #ccc;
+    }
+
+    .zoom-controls {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .zoom-btn {
+      background: #fff;
+      color: #000;
+      font-size: 22px;
+      font-weight: bold;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      border: 2px solid #000;
+    }
+
+    .zoom-btn:hover {
+      background: #000;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Início</a>
-  <a href="esculturas.html">Esculturas</a>
-  <a href="pinturas.html">Pinturas</a>
-  <a href="desenhos.html">Desenhos</a>
-  <a href="textos.html">Textos</a>
-</nav>
+<a href="pinturas.html" class="voltar">←</a>
 
-<div class="container">
-  <h1>Pinturas Reais (Físicas)</h1>
-  <p class="desc">Obras realizadas com materiais tradicionais — acrílico, óleo, guache e técnicas mistas.</p>
+<main>
+  <h2>Pinturas Fisicas</h2>
+  <p class="intro">
+    Obras físicas realizadas com materiais tradicionais — acrílico, óleo e técnicas mistas, explorando luz, matéria e presença.
+  </p>
 
-  <!-- OBRA 1 -->
+  <div class="gallery">
+
   <div class="obra">
-    <h2>“Luz e Matéria”</h2>
-    <p>Acrílico sobre tela · 2024 · 60x80cm</p>
-    <div class="gallery">
-      <img src="reais1.jpg" alt="">
-      <img src="reais2.jpg" alt="">
-    </div>
+    <img src="crepusculo.jpg" alt="Crepúsculo">
+    <p>Título: "Crepúsculo”
+      
+      Técnica: Esmalte vermelho e acrílico sobre tela
+      
+      Ano: 2017
+      
+      Descrição: “Crepúsculo” apresenta três figuras humanas envoltas numa atmosfera de fogo e sombra. O esmalte vermelho serve de base ardente, evocando sangue e desejo, enquanto o acrílico suaviza a superfície, revelando corpos pálidos que emergem do escuro como aparições. 
+      O cenário, dominado por montanhas negras e um céu em combustão, sugere um espaço mítico — um limbo entre o terreno e o divino, onde o calor da cor se confunde com o pecado. As figuras, imóveis e intensas, parecem partilhar um segredo ancestral, um pacto silencioso sob a luz vermelha que tudo consome.
+      A obra é uma invocação do poder da cor e da carne, um ritual pictórico onde o vermelho se torna símbolo de tentação, vida e condenação.</p>
   </div>
 
-  <!-- OBRA 2 -->
   <div class="obra">
-    <h2>“Silêncio Cromático”</h2>
-    <p>Óleo sobre madeira · 2023 · 50x70cm</p>
-    <div class="gallery">
-      <img src="reais3.jpg" alt="">
-      <img src="reais4.jpg" alt="">
-    </div>
+    <img src="dissolucao.jpg" alt="Dissolução">
+    <p>Título: "Dissolução”
+      
+      Ano: 2017 
+      
+      Técnica: Acrílico sobre tela
+      
+      Descrição: “Dissolução” é uma pintura realizada em 2017 que explora o comportamento físico da tinta acrílica — a textura, o escorrimento e o efeito visual do derreter. A composição parte de uma estrutura facial abstrata, onde os traços se fragmentam e se expandem através de linhas verticais e fluxos de pigmento.
+      A paleta combina tons lilás, bege e grafite, criando uma atmosfera de transição entre o sólido e o líquido. O gesto pictórico evidencia o movimento da matéria, transformando o rosto num campo de experimentação sobre o tempo, a gravidade e a fluidez da cor.
+      A obra insere‑se numa pesquisa sobre o limite entre figura e dissolução, onde o processo físico da pintura se torna o próprio tema.</p>
+  </div>
+
+  <div class="obra">
+    <img src="entidade.jpg" alt="Entidade">
+    <p>Título: "Entidade”
+      
+      Técnica: Acrílico sobre tela
+
+      Ano: 2018
+      
+      Descrição: “Entidade” representa uma figura feminina de caráter imperial, concebida como símbolo de poder e domínio espiritual. Executada em tinta acrílica, com tons esverdeados musgo e grafite, a obra traduz a presença de uma mulher nobre, dotada de autoridade e atributos sobrenaturais. 
+      A pintura foi realizada diretamente pela observação real do artefacto escultórico, que serviu de referência material e simbólica. Essa relação entre pintura e escultura reforça o caráter tridimensional da representação, aproximando a figura de uma entidade tangível e ritualística.
+      A composição frontal e o olhar intenso sublinham a dimensão hierática da personagem, enquanto os escorridos verticais e a textura da superfície sugerem uma energia que se expande para além do corpo. O tratamento cromático e o contraste entre luz e sombra conferem à obra uma atmosfera de solenidade e mistério.</p>
+  </div>
+
+  <div class="obra">
+    <img src="nomaisfundodeti.jpg" alt="No Mais Fundo de Ti">
+    <p>Título: "No Mais Fundo de Ti”
+      
+      Técnica: Óleo sobre tela
+
+      Ano: 2015
+      
+      Descrição: Esta pintura é uma reinterpretação contemporânea do universo de Henri de Toulouse-Lautrec, onde o olhar íntimo sobre a feminilidade e o espaço teatral se transforma num diálogo emocional entre mãe e filho. As figuras femininas, envoltas em tons suaves e gestos contidos, evocam o tempo suspenso da infância e o eco das palavras que permanecem. 
+      A composição, marcada por contrastes entre sombra e luz, cria uma atmosfera de lembrança e introspeção. O texto inscrito na tela — um excerto do poema “As Mãos e os Frutos” de Eugénio de Andrade — reforça essa dimensão poética e confessional, transformando a pintura num espaço de encontro entre imagem e palavra.
+      A obra convida o observador a penetrar no “fundo dos olhos” da figura materna, onde se guardam as vozes e as rosas da memória. É uma homenagem à delicadeza e à força do vínculo materno, reinterpretada através da estética expressionista e da sensibilidade moderna.</p>
+  </div>
+
+  <div class="obra">
+    <img src="suspensao.jpg" alt="Suspensão">
+    <p>Título: “Suspensão” 
+      
+      Técnica: Acrílico e glitter sobre tela
+
+      Ano: 2017
+      
+      Descrição: “Suspensão” é uma obra em acrílico e glitter que explora a ideia de energia primordial detida no instante anterior ao movimento total. A composição nasce de um núcleo escuro e denso, onde o brilho metálico do glitter se concentra, criando um ponto de tensão luminosa que parece pulsar sem nunca se libertar por completo.
+      A partir desse centro, irrompem fluxos de cor — amarelos, laranjas, cobre e dourados — que se projetam para o exterior com força gestual. O lado direito mantém a intensidade da expansão, enquanto o lado esquerdo revela uma transição mais suave: as cores tornam‑se aguadas, difusas e arrastadas, como se a energia se dissolvesse lentamente no espaço‑tempo, suspensa entre avanço e retração.
+      A paleta cromática combina preto e cinza como base estrutural, cobre e dourado como elementos de luz e vibração, glitter dourado, branco como acentuação luminosa, e subtis tons rosados resultantes da mistura entre cobre, branco e cinza — criando uma atmosfera de suspensão entre calor e neutralidade.
+      Essa assimetria entre explosão e dissolução constrói uma narrativa visual sobre expressão e contenção, onde o gesto pictórico oscila entre o ímpeto e a pausa. A obra combina a fisicalidade do acrílico com o brilho do glitter, acrescentando profundidade, vibração e uma sensação de luz suspensa. 
+      “Suspensão” é uma meditação visual sobre o instante em que a matéria hesita entre emergir do vazio ou permanecer nele — um equilíbrio ambíguo entre o aguado e o texturado, entre o que se revela e o que se dissolve.</p>
   </div>
 
 </div>
+
+</main>
+
+<div class="modal" id="modal">
+  <span class="fechar" id="fechar">X</span>
+  <span class="anterior" id="anterior">‹</span>
+  <img id="imagemModal" src="">
+  <span class="seguinte" id="seguinte">›</span>
+
+  <div class="zoom-controls">
+    <div class="zoom-btn" id="zoomIn">+</div>
+    <div class="zoom-btn" id="zoomOut">−</div>
+  </div>
+</div>
+
+<script>
+  const imagens = document.querySelectorAll('.obra img');
+  const modal = document.getElementById('modal');
+  const imagemModal = document.getElementById('imagemModal');
+  const fechar = document.getElementById('fechar');
+  const anterior = document.getElementById('anterior');
+  const seguinte = document.getElementById('seguinte');
+  const zoomIn = document.getElementById('zoomIn');
+  const zoomOut = document.getElementById('zoomOut');
+
+  let indiceAtual = 0;
+  let zoom = 1;
+
+  imagens.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      indiceAtual = i;
+      abrirModal();
+    });
+  });
+
+  function abrirModal() {
+    modal.style.display = 'flex';
+    imagemModal.src = imagens[indiceAtual].src;
+    zoom = 1;
+    imagemModal.style.transform = `scale(${zoom})`;
+  }
+
+  fechar.addEventListener('click', () => modal.style.display = 'none');
+
+  anterior.addEventListener('click', () => {
+    indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+    imagemModal.src = imagens[indiceAtual].src;
+    zoom = 1;
+    imagemModal.style.transform = `scale(${zoom})`;
+  });
+
+  seguinte.addEventListener('click', () => {
+    indiceAtual = (indiceAtual + 1) % imagens.length;
+    imagemModal.src = imagens[indiceAtual].src;
+    zoom = 1;
+    imagemModal.style.transform = `scale(${zoom})`;
+  });
+
+  zoomIn.addEventListener('click', () => {
+    zoom += 0.2;
+    imagemModal.style.transform = `scale(${zoom})`;
+  });
+
+  zoomOut.addEventListener('click', () => {
+    zoom = Math.max(0.4, zoom - 0.2);
+    imagemModal.style.transform = `scale(${zoom})`;
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>
 
 </body>
 </html>
